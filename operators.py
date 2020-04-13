@@ -39,9 +39,7 @@ def BlueSlideOperator(start_state: PuzzleState) -> Generator[PuzzleState, None, 
 
 def RedJumpOperator(start_state: PuzzleState) -> Generator[PuzzleState, None, None]:
     yield from next_states(start_state, (Peg.RED, Peg.BLUE, Peg.NONE), (Peg.NONE, Peg.BLUE, Peg.RED))
-    yield from next_states(start_state, (Peg.RED, Peg.RED, Peg.NONE), (Peg.NONE, Peg.RED, Peg.RED))
 
 
 def BlueJumpOperator(start_state: PuzzleState) -> Generator[PuzzleState, None, None]:
     yield from next_states(start_state, (Peg.NONE, Peg.RED, Peg.BLUE), (Peg.BLUE, Peg.RED, Peg.NONE))
-    yield from next_states(start_state, (Peg.NONE, Peg.BLUE, Peg.BLUE), (Peg.BLUE, Peg.BLUE, Peg.NONE))
